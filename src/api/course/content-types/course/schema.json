@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "courses",
+  "info": {
+    "singularName": "course",
+    "pluralName": "courses",
+    "displayName": "course",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "discription": {
+      "type": "text",
+      "required": false
+    },
+    "courseVideo": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "videos"
+      ]
+    },
+    "courseCoverIMG": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "videoTitle": {
+      "type": "string",
+      "required": true
+    },
+    "videoDiscription": {
+      "type": "string",
+      "required": true
+    },
+    "exams": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::exam.exam",
+      "mappedBy": "course"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "courses"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "exams",
+  "info": {
+    "singularName": "exam",
+    "pluralName": "exams",
+    "displayName": "exam",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "discription": {
+      "type": "string",
+      "required": true
+    },
+    "course": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::course.course",
+      "inversedBy": "exams"
+    }
+  }
+}
